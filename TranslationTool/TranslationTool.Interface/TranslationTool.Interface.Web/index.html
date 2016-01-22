@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html data-ng-controller="uploadController>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Translation Tool</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="row" style="padding: 50px;">
+    <div class="col-md-2"><form action="">
+        <br>
+        <input type="text" name="find" placeholder="Find:" >
+        <br>
+        <br>
+        <input type="text" name="replace" placeholder="Replace:" >
+    </form></div>
+    <div class="col-md-2"><input type="checkbox" name="exact"  value="">Exact match
+           </div>
+    <div class="col-md-2"><button onclick="uploadFunction()">Upload</button>
+        <input type="file" id="file" name="file"/>
+        <button ng-click="add()">Add</button>
+    </div>
+    <div class="col-md-2"><select>
+        <option value="Application(...)">Application(...)</option>
+        <option value="POS">POS</option>
+        <option value="CO">CO</option>
+    </select>
+        <br>
+        <br>
+        <select>
+            <option value="de">Language: de</option>
+            <option value="no">Language: no</option>
+            <option value="fi">Language: fi</option>
+            <option value="sv">Language: sv</option>
+            <option value="pt">Language: pt</option>
+            <option value="bg">Language: bg</option>
+            <option value="el">Language: el</option>
+            <option value="da">Language: da</option>
+            <option value="en">Language: en</option>
+            <option value="it">Language: it</option>
+            <option value="fr">Language: fr</option>
+            <option value="hu">Language: hu</option>
+            <option value="es">Language: es</option>
+            <option value="cs">Language: cs</option>
+            <option value="bg">Language: bg</option>
+            <option value="ca">Language: ca</option>
+            <option value="nl">Language: nl</option>
+            <option value="sl">Language: sl</option>
+        </select>
+    </div>
+    <div class="col-md-2"><button onclick="searchFunction()">Search</button>
+    </div>
+    <div class="col-md-2"><button onclick="downloadFunction()">Download</button>
+    </div>
+</div>
+
+<div class="headercontainer col-md-12">
+    <div class="tablecontainer col-md-6 ">
+        <table class="table table-fixed">
+            <thead>
+            <tr>
+                <th>
+                    Key
+                    <div>Key</div>
+                </th>
+                <th>
+                    Application
+                    <div>Application</div>
+                </th>
+                <th>
+                    Branches
+                    <div>Branches</div>
+                </th>
+                <th>
+                    Value
+                    <div>Value</div>
+                </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>action.refund.item</td>
+                <td>POS</td>
+                <td>14.1-MAINT 15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>action.refund.item</td>
+                <td>CO</td>
+                <td>14.1-MAINT 15.1-MAINT</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>column.item.id</td>
+                <td>CO</td>
+                <td>15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>palette.suspend.order</td>
+                <td>CO</td>
+                <td>14.1-MAINT 15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>column.item.id</td>
+                <td>CO</td>
+                <td>15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>palette.suspend.order</td>
+                <td>CO</td>
+                <td>14.1-MAINT 15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>column.item.id</td>
+                <td>CO</td>
+                <td>15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>palette.suspend.order</td>
+                <td>CO</td>
+                <td>14.1-MAINT 15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+    <div class="tablecontainer col-md-6">
+        <table class="table table-fixed">
+            <thead>
+            <tr>
+                <th>
+                    Key
+                    <div>Key</div>
+                </th>
+                <th>
+                    Application
+                    <div>Application</div>
+                </th>
+                <th>
+                    Branches
+                    <div>Branches</div>
+                </th>
+                <th>
+                    Value
+                    <div>Value</div>
+                </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>action.refund.item</td>
+                <td>POS</td>
+                <td>14.1-MAINT 15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>action.refund.item</td>
+                <td>CO</td>
+                <td>14.1-MAINT 15.1-MAINT</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>column.item.id</td>
+                <td>CO</td>
+                <td>15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>palette.suspend.order</td>
+                <td>CO</td>
+                <td>14.1-MAINT 15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>column.item.id</td>
+                <td>CO</td>
+                <td>15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>palette.suspend.order</td>
+                <td>CO</td>
+                <td>14.1-MAINT 15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>column.item.id</td>
+                <td>CO</td>
+                <td>15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+            <tr>
+                <td>palette.suspend.order</td>
+                <td>CO</td>
+                <td>14.1-MAINT 15.1-MAINT main</td>
+                <td>Refundovat položku</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p id="demo"></p>
+<script>
+    function uploadFunction() {
+        document.getElementById("demo").innerHTML = "Upload document";
+    }
+    function searchFunction(){
+        document.getElementById("demo").innerHTML = "Search";
+    }
+    function downloadFunction(){
+        document.getElementById("demo").innerHTML = "Download document";
+    }
+</script>
+</body>
+</html>
