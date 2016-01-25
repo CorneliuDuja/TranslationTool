@@ -1,17 +1,3 @@
-input[type=text] {
-    width: 220px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-position: 15px 15px;
-    background-repeat: no-repeat;
-    padding: 20px 20px 3px 10px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
 .left {
     float: left;
     padding-left: 30px;
@@ -111,4 +97,22 @@ th:first-child div{
 /* alternate colors for rows */
 .tablecontainer tbody  tr:nth-child(even){
     background-color: #ddd;
+}
+
+.progress-bar {
+    width: 300px; height: 14px;
+    border-radius: 10px;
+    border: 1px solid #CCC;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#6666cc), to(#4b4b95));
+    border-image: initial;
+}
+.uploaded {
+    padding: 0;
+    height: 14px;
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#66cc00), to(#4b9500));
+    border-image: initial;
+}
+.percent {
+    position: absolute; width: 300px; height: 14px; z-index: 1; text-align: center; font-size: 0.8em; color: white;
 }
