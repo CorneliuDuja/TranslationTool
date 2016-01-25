@@ -1,6 +1,6 @@
 (function () {
 
-    var mainController = function ($scope, $routeParams, translationService) {
+    var indexController = function ($scope, $routeParams, translationService) {
 
         function init() {
 /*
@@ -28,15 +28,15 @@
                 if ($scope.languages.length > 0){
                     $scope.language = $scope.languages[0].Language;
                 }
-                $scope.application = [];
-                $scope.applications = translationService.applicationSelect();
+                $scope.searchApplications = [];
+                $scope.allApplications = translationService.applicationSelect();
 /*
                 var dateFrom = new Date($routeParams.dateFrom);
                 var dateTo = new Date($routeParams.dateTo);
                 $scope.dateFrom = $scope.formatDate(dateFrom);
                 $scope.dateTo = $scope.formatDate(dateTo);
-                translationService.mainSelect(dateFrom, dateTo, $scope.weekdays).then(function (response) {
-                    $scope.mains = response.data;
+                translationService.indexSelect(dateFrom, dateTo, $scope.weekdays).then(function (response) {
+                    $scope.indexs = response.data;
                 });
 */
             }
@@ -159,8 +159,8 @@
 
     };
 
-    mainController.$inject = ['$scope', '$routeParams', 'translationService'];
+    indexController.$inject = ['$scope', '$routeParams', 'translationService'];
 
-    angular.module('translation').controller('mainController', mainController);
+    angular.module('translation').controller('indexController', indexController);
 
 }());

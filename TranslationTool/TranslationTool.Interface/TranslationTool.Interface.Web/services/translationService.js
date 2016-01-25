@@ -26,7 +26,7 @@
 
         factory.applicationSelect = function () {
             return [
-                {Application: 'SharedResources', Name: 'asdfdsfsd'},
+                {Application: 'SharedResources'},
                 {Application: 'accounting'},
                 {Application: 'base'},
                 {Application: 'POS'},

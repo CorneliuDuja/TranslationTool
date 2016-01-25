@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-controller="uploadController>
+<html data-ng-app="translation" data-ng-controller="indexController">
 <head>
     <meta charset="UTF-8">
     <title>Translation Tool</title>
@@ -21,7 +21,7 @@
     <script type="text/javascript" src="scripts/app.js"></script>
 
     <!-- Controllers -->
-    <script type="text/javascript" src="controllers/mainController.js"></script>
+    <script type="text/javascript" src="controllers/indexController.js"></script>
 
     <!-- Filters
     <script type="text/javascript" src="filters/longTimeFilter.js"></script>
@@ -41,6 +41,30 @@
 
 </head>
 <body>
+
+<table>
+    <tr>
+        <td>
+            Header
+        </td>
+    </tr>
+    <tr>
+        <td>
+            First grid
+        </td>
+        <td>
+            Second grid
+        </td>
+    </tr>
+    <tr>
+        <td>
+            First status
+        </td>
+        <td>
+            Second status
+        </td>
+    </tr>
+</table>
 
 <div class="row" style="padding: 50px;">
     <div class="col-md-2"><form action="">
@@ -62,33 +86,19 @@
             </div>
         </div>
     </div>
-    <div class="col-md-2"><select>
-        <option value="Application(...)">Application(...)</option>
-        <option value="POS">POS</option>
-        <option value="CO">CO</option>
-    </select>
+    <div class="col-md-2">
+
+        <isteven-multi-select
+                input-model="allApplications"
+                output-model="searchApplications"
+                button-label="Application"
+                item-label="Application"
+                tick-property="ticked">
+        </isteven-multi-select>
+
         <br>
         <br>
-        <select>
-            <option value="de">Language: de</option>
-            <option value="no">Language: no</option>
-            <option value="fi">Language: fi</option>
-            <option value="sv">Language: sv</option>
-            <option value="pt">Language: pt</option>
-            <option value="bg">Language: bg</option>
-            <option value="el">Language: el</option>
-            <option value="da">Language: da</option>
-            <option value="en">Language: en</option>
-            <option value="it">Language: it</option>
-            <option value="fr">Language: fr</option>
-            <option value="hu">Language: hu</option>
-            <option value="es">Language: es</option>
-            <option value="cs">Language: cs</option>
-            <option value="bg">Language: bg</option>
-            <option value="ca">Language: ca</option>
-            <option value="nl">Language: nl</option>
-            <option value="sl">Language: sl</option>
-        </select>
+        <select class="btn btn-default btn-xs dropdown-toggle" data-ng-model="language" data-ng-options="item as item.Language for item in languages"></select>
     </div>
     <div class="col-md-2"><button onclick="searchFunction()">Search</button>
     </div>
@@ -148,13 +158,7 @@
     </div>
 </div>
 
-<div class="container" ng-app="sortApp" ng-controller="mainController">
-
-    <!--<div class="alert alert-info">
-        <p>Sort Type: {{ sortType }}</p>
-        <p>Sort Reverse: {{ sortReverse }}</p>
-        <p>Search Query: {{ searchKey }}</p>
-    </div>-->
+<div class="container">
 
     <form>
         <div class="form-group">
@@ -220,19 +224,6 @@
     </table>
 
 </div>
-
-<p id="demo"></p>
-<script>
-    function uploadFunction() {
-        document.getElementById("demo").innerHTML = "Upload document";
-    }
-    function searchFunction(){
-        document.getElementById("demo").innerHTML = "Search";
-    }
-    function downloadFunction(){
-        document.getElementById("demo").innerHTML = "Download document";
-    }
-</script>
 
 </body>
 </html>

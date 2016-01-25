@@ -3,14 +3,14 @@
  */
          (function () {
 
-    var app = angular.module('accessControl', ['ngRoute', 'isteven-multi-select']);
+    var app = angular.module('translation', ['ngRoute', 'isteven-multi-select']);
 
     app.config(['$routeProvider', function ($routeProvider) {
 
         $routeProvider
             .when('/translation', {
-                controller: 'mainController',
-                templateUrl: 'views/main.html'
+                controller: 'indexController',
+                templateUrl: 'index.html'
             })
             .otherwise({ redirectTo: '/translation' });
 
