@@ -8,7 +8,8 @@
     <script type="text/javascript" src="scripts/angular/angular-1.3.10/angular.min.js"></script>
     <script type="text/javascript" src="scripts/angular/angular-route-1.4.0/angular-route.min.js"></script>
 
-    <script type="text/javascript" src="scripts/angular/angular-multi-select-master-4.0.0/isteven-multi-select.js"></script>
+    <script type="text/javascript"
+            src="scripts/angular/angular-multi-select-master-4.0.0/isteven-multi-select.js"></script>
     <link rel="stylesheet" href="scripts/angular/angular-multi-select-master-4.0.0/isteven-multi-select.css"></link>
 
     <script type="text/javascript" src="scripts/angular/x2js-master/xml2json.min.js"></script>
@@ -46,42 +47,129 @@
 
 </head>
 <body>
+<div class="container">
+    <table>
+        <div class="row" style="padding: 30px">
+            <tr>
+                <td>
+                    <div class="col-md-1">
+                        <input type="file" id="upload" name="Upload"/>
+                        <br>
+                        <button data-ng-click="upload()">Upload</button>
+                    </div>
+                </td>
+                <td>
+                    <div class="col-md-3">
+                        <input type="checkbox" name="exact" value="">Exact match
+                        <br>
+                        <input type="checkbox" name="case" value="">Case sensitive
+                    </div>
+                </td>
+                <td>
+                    <div class="col-md-2">
+                        <input type="text" name="find" placeholder="Find:">
+                        <br>
+                        <br>
+                        <input type="text" name="replace" placeholder="Replace:">
+                    </div>
+                </td>
+                <td>
+                    <div class="col-md-4">
+                        <isteven-multi-select
+                                input-model="allApplications"
+                                output-model="searchApplications"
+                                button-label="Name"
+                                item-label="Name"
+                                tick-property="ticked"
+                                max-labels="1">
+                        </isteven-multi-select>
+                        <br>
+                        <br>
+                        <select class="btn btn-default btn-xs dropdown-toggle" data-ng-model="locale"
+                                data-ng-options="item as item.Name for item in locales"></select>
+                    </div>
+                </td>
+                <td>
+                    <div class="col-md-2">
+                        <button data-ng-click="upload()">Search</button>
+                        <br>
+                        <br>
+                        <button data-ng-click="download()">Download</button>
+                    </div>
+                </td>
+               <!-- <td>
+                    <div class="col-md-2">
+                        <button data-ng-click="download()">Download</button>
+                    </div>
+                </td>-->
+            </tr>
+        </div>
+    </table>
 
-<table>
-    <tr>
-        <td>
-            <input type="file" id="upload" name="Upload"/>
-            <button data-ng-click="upload()">Upload</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            First grid
-        </td>
-        <td>
-            Second grid
-        </td>
-    </tr>
-    <tr>
-        <td>
-            First status
-        </td>
-        <td>
-            Second status
-        </td>
-    </tr>
-</table>
+        <div class="row ">
+            <tr>
+                <td>
+                    <table class="table table-hover table-striped col-md-6">
+                        <thead>
+                        <tr>
+                            <th style="width:40%">Key</th>
+                            <th style="width:15%">Application</th>
+                            <th style="width:15%">Branch</th>
+                            <th style="width:25%">Value</th>
+                            <th style="width:5%"><input type="checkbox" name="case" value=""></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-ng-repeat="">
+                            <td>{{}}</td>
+                            <td>{{}}</td>
+                            <td>{{}}</td>
+                            <td>{{}}</td>
+                            <td>{{}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table class="table table-hover table-striped col-md-6">
+                        <thead>
+                        <tr>
+                            <th style="width:40%">Key</th>
+                            <th style="width:15%">Application</th>
+                            <th style="width:15%">Branch</th>
+                            <th style="width:25%">Value</th>
+                            <th style="width:5%"><input type="checkbox" name="case" value=""></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-ng-repeat="">
+                            <td>{{}}</td>
+                            <td>{{}}</td>
+                            <td>{{}}</td>
+                            <td>{{}}</td>
+                            <td>{{}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </div>
+        <tr>
+            <td>
+                <div class="col-md-6">
+                    First status
+                    </div>
+            </td>
+            <td>
+                <div class="col-md-6">
+                    Second status
+                </div>
+            </td>
+        </tr>
 
-<div class="row" style="padding: 50px;">
-    <div class="col-md-2"><form action="">
-        <input type="text" name="find" placeholder="Find:" >
-        <br>
-        <br>
-        <input type="text" name="replace" placeholder="Replace:" >
-    </form></div>
-    <div class="col-md-2">
-        <input type="checkbox" name="exact"  value="">Exact match
-           </div>
+</div>
+<!--<div class="row" style="padding: 50px;">
+
     <div class="col-md-2">
         <input type="file" ng-model-instant id="fileToUpload" multiple onchange="angular.element(this).scope().setFiles(this)" />
         <input type="button" ng-click="uploadFile()" value="Upload" />
@@ -92,6 +180,17 @@
             </div>
         </div>
     </div>
+    <div class="col-md-2"><form action="">
+        <input type="text" name="find" placeholder="Find:" >
+        <br>
+        <br>
+        <input type="text" name="replace" placeholder="Replace:" >
+    </form></div>
+    <div class="col-md-2"><input type="checkbox" name="exact"  value="">Exact match
+        <br>
+        <input type="checkbox" name="exact"  value="">Case sensitive
+    </div>
+
     <div class="col-md-2">
 
         <isteven-multi-select
@@ -161,10 +260,10 @@
             </tbody>
 
         </table>
-    </div>
-</div>
+    </div>-->
 
-<div class="container">
+
+<!--<div class="container">
 
     <form>
         <div class="form-group">
@@ -229,7 +328,7 @@
 
     </table>
 
-</div>
+</div>-->
 
 </body>
 </html>
