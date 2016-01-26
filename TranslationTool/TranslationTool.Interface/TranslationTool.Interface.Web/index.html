@@ -11,6 +11,8 @@
     <script type="text/javascript" src="scripts/angular/angular-multi-select-master-4.0.0/isteven-multi-select.js"></script>
     <link rel="stylesheet" href="scripts/angular/angular-multi-select-master-4.0.0/isteven-multi-select.css"></link>
 
+    <script type="text/javascript" src="scripts/angular/x2js-master/xml2json.min.js"></script>
+
     <!-- JQuery -->
     <script type="text/javascript" src="scripts/jquery/jquery-1.11.2.min.js"></script>
 
@@ -27,6 +29,9 @@
     <script type="text/javascript" src="filters/longTimeFilter.js"></script>
     <script type="text/javascript" src="filters/shortTimeFilter.js"></script>
     -->
+
+    <!-- Prototypes -->
+    <script type="text/javascript" src="prototypes/objectPrototype.js"></script>
 
     <!-- Services -->
     <script type="text/javascript" src="services/translationService.js"></script>
@@ -45,7 +50,8 @@
 <table>
     <tr>
         <td>
-            Header
+            <input type="file" id="upload" name="Upload"/>
+            <button data-ng-click="upload()">Upload</button>
         </td>
     </tr>
     <tr>
@@ -91,14 +97,14 @@
         <isteven-multi-select
                 input-model="allApplications"
                 output-model="searchApplications"
-                button-label="Application"
-                item-label="Application"
+                button-label="Name"
+                item-label="Name"
                 tick-property="ticked">
         </isteven-multi-select>
 
         <br>
         <br>
-        <select class="btn btn-default btn-xs dropdown-toggle" data-ng-model="language" data-ng-options="item as item.Language for item in languages"></select>
+        <select class="btn btn-default btn-xs dropdown-toggle" data-ng-model="locale" data-ng-options="item as item.Name for item in locales"></select>
     </div>
     <div class="col-md-2"><button onclick="searchFunction()">Search</button>
     </div>

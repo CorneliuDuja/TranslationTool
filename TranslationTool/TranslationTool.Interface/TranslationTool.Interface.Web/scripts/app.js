@@ -1,7 +1,7 @@
 /**
  * Created by user on 1/20/16.
  */
-         (function () {
+(function () {
 
     var app = angular.module('translation', ['ngRoute', 'isteven-multi-select']);
 
