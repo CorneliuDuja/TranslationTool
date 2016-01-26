@@ -115,20 +115,20 @@
             return locales;
         };
 
-        factory.sentenceSelect = function (searchApplications, locale, value, caseSensitive, wholeWords) {
+        factory.sentenceSelect = function (predicate) {
             onStart();
             var sentences = [];
-            try{
+            try {
                 //Convert passed value to lower case when search is not case sensitive
-                if (!caseSensitive) {
-                    value = value.toLowerCase();
+                if (!predicate.caseSensitive) {
+                    predicate.value = predicate.value.toLowerCase();
                 }
                 for (var xSentenceIndex = 0; xSentenceIndex < dictionary.XSentence.length; xSentenceIndex++) {
                     var xSentence = dictionary.XSentence[xSentenceIndex];
                     // Check if passed application array is null or empty or contains application for current XSentence
-                    if (searchApplications != null &&
-                        searchApplications.length > 0 &&
-                        searchApplications.indexOf(xSentence._application) < 0) {
+                    if (predicate.applications != null &&
+                        predicate.applications.length > 0 &&
+                        predicate.applications.indexOf(xSentence._application) < 0) {
                         continue;
                     }
                     for (var xBranchIndex = 0; xBranchIndex < xSentence.XBranch.length; xBranchIndex++) {
@@ -136,21 +136,21 @@
                         for (var xBranchTranslationIndex = 0; xBranchTranslationIndex < xBranch.XBranchTranslation.length; xBranchTranslationIndex++) {
                             var xBranchTranslation = xBranch.XBranchTranslation[xBranchTranslationIndex];
                             //Check if passed locale is the same as XBranchTranslation locale
-                            if (xBranchTranslation._locale != locale) {
+                            if (xBranchTranslation._locale != predicate.locale) {
                                 continue;
                             }
                             //Convert XBranchTranslation value to lower case when search is not case sensitive
                             var branchTranslationValue = xBranchTranslation._value;
-                            if (!caseSensitive) {
+                            if (!predicate.caseSensitive) {
                                 branchTranslationValue = branchTranslationValue.toLowerCase();
                             }
                             //Apply whole words search criteria
                             var found = false;
-                            if (wholeWords) {
-                                found = (branchTranslationValue == value);
+                            if (predicate.wholeWords) {
+                                found = (branchTranslationValue == predicate.value);
                             }
-                            else{
-                                found = (branchTranslationValue.indexOf(value) >= 0);
+                            else {
+                                found = (branchTranslationValue.indexOf(predicate.value) >= 0);
                             }
                             // Add found item to search results
                             if (found) {
@@ -160,7 +160,8 @@
                                     branch: xBranch._id,
                                     locale: xBranchTranslation._locale,
                                     value: xBranchTranslation._value,
-                                    file: fileFind(xSentence._application, xBranch._id, xBranchTranslation._locale)
+                                    file: fileFind(xSentence._application, xBranch._id, xBranchTranslation._locale),
+                                    selected: false
                                 });
                             }
                         }
