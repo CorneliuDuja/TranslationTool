@@ -66,6 +66,12 @@
             }
         };
 
+        $scope.download = function () {
+            var typedArray = 'asdfasdfasdfasdgfasdg';
+            var blob = new Blob([typedArray], {type: 'application/octet-binary'});
+            var url = URL.createObjectURL(blob);
+        };
+
         function sentenceInProcess(sentence, replaceable) {
             var indexOf = 0;
             if (sentence.selected) {

@@ -54,20 +54,14 @@
             <table border="1">
                 <tr>
                     <td>
+                        <b>Step №1 - choose and upload input file</b>
+                        <br/>
                         <input type="file" id="upload"/>
                         <button data-ng-click="upload()">Upload</button>
                     </td>
                     <td>
-                        <input type="text" placeholder="Find:" data-ng-model="find">
+                        <b>Step №2 - select applications and locale</b>
                         <br/>
-                        <input type="text" placeholder="Replace:" data-ng-model="replace">
-                    </td>
-                    <td>
-                        <input type="checkbox" data-ng-model="caseSensitive"><span>Case sensitive</span>
-                        <br/>
-                        <input type="checkbox" data-ng-model="wholeWords"><span>Whole Words</span>
-                    </td>
-                    <td>
                         <isteven-multi-select
                                 input-model="applicationIn"
                                 output-model="applicationOut"
@@ -82,9 +76,18 @@
                                 data-ng-options="item as item.Name for item in localeIn"></select><span>Locale</span>
                     </td>
                     <td>
+                        <b>Step №3 - apply find and replace criteria</b>
+                        <br/>
+                        <input type="text" placeholder="Find:" data-ng-model="find">
+                        <input type="text" placeholder="Replace:" data-ng-model="replace">
                         <button data-ng-click="search()">Search</button>
+                        <br/>
+                        <input type="checkbox" data-ng-model="caseSensitive"><span>Case sensitive</span>
+                        <input type="checkbox" data-ng-model="wholeWords"><span>Whole Words</span>
                     </td>
                     <td>
+                        <b>Step №4 - download output file</b>
+                        <br/>
                         <button data-ng-click="download()">Download</button>
                     </td>
                 </tr>
@@ -124,7 +127,8 @@
                     <th><b>Application</b></th>
                     <th><b>Branch</b></th>
                     <th><b>Value</b></th>
-                    <th><input type="checkbox" data-ng-model="sentenceOutAll" data-ng-change="sentenceOutAllSelect()"></th>
+                    <th><input type="checkbox" data-ng-model="sentenceOutAll" data-ng-change="sentenceOutAllSelect()">
+                    </th>
                 </tr>
                 </thead>
                 <tbody data-ng-repeat="sentence in sentenceOut">
