@@ -112,6 +112,9 @@
                     xSentence.XBranch = xSentence.XBranch.toArray();
                     angular.forEach(xSentence.XBranch, function (xBranch) {
                         xBranch.XBranchTranslation = xBranch.XBranchTranslation.toArray();
+                        angular.forEach(xBranch.XBranchTranslation, function (xBranchTranslation) {
+                            xBranchTranslation._value = decodeURIComponent(escape(xBranchTranslation._value));
+                        });
                     });
                 });
                 onSuccess();

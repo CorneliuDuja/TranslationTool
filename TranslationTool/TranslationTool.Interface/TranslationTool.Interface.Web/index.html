@@ -89,7 +89,6 @@
                                 max-labels="1">
                         </isteven-multi-select>
                         <span>Applications</span>
-                        <br/>
                         <isteven-multi-select
                                 input-model="branchIn"
                                 output-model="branchOut"
@@ -103,11 +102,10 @@
                     <td>
                         <input type="text" placeholder="Find:" data-ng-model="find"/>
                         <input type="text" placeholder="Replace:" data-ng-model="replace"/>
+                        <button data-ng-click="search()">Search</button>
                         <br/>
                         <input type="checkbox" data-ng-model="caseSensitive"/><span>Case sensitive</span>
                         <input type="checkbox" data-ng-model="wholeWords"/><span>Whole Words</span>
-                        <br/>
-                        <button data-ng-click="search()">Search</button>
                     </td>
                     <td>
                         <button data-ng-click="download()">Download</button>
@@ -118,10 +116,10 @@
     </tr>
     <tr valign="top">
         <td>
-            <input type="text" data-ng-model="sentenceInStatus" readonly style="width:100%"/>
+            <input type="text" data-ng-model="sentenceInStatus" readonly style="width:100%; font-weight: bold;"/>
         </td>
         <td>
-            <input type="text" data-ng-model="sentenceOutStatus" readonly style="width:100%"/>
+            <input type="text" data-ng-model="sentenceOutStatus" readonly style="width:100%; font-weight: bold;"/>
         </td>
     </tr>
     <tr valign="top">
