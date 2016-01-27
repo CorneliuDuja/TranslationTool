@@ -12,6 +12,7 @@
             XSentence: []
         };
         var applications = [];
+        var branches = [];
         var locales = [];
 
         function onStart() {
@@ -32,6 +33,7 @@
                 XSentence: []
             };
             applications = [];
+            branches = [];
             locales = [];
         }
 
@@ -44,6 +46,17 @@
                 }
             }
             return application;
+        }
+
+        function branchFind(name) {
+            var branch = null;
+            for (var index = 0; index < branches.length; index++) {
+                if (branches[index].Name == name) {
+                    branch = branches[index];
+                    break;
+                }
+            }
+            return branch;
         }
 
         function localeFind(name) {
@@ -73,6 +86,7 @@
 
         factory.load = function (data) {
             onStart();
+            factory.exception = null;
             try {
                 clearData();
                 //Convert XML string into JSON object
@@ -80,10 +94,13 @@
                 dictionary = x2js.xml_str2json(data).Dictionary;
                 // Convert XApplication to array for single node (see prototype)
                 dictionary.XApplication = dictionary.XApplication.toArray();
-                //Get applications and locale (maybe branches in the future)
+                //Get applications, branches and locales (maybe branches in the future)
                 angular.forEach(dictionary.XApplication, function (xApplication) {
                     if (applicationFind(xApplication._application) == null) {
                         applications.push({Name: xApplication._application});
+                    }
+                    if (branchFind(xApplication._branch) == null) {
+                        branches.push({Name: xApplication._branch});
                     }
                     if (localeFind(xApplication._locale) == null) {
                         locales.push({Name: xApplication._locale});
@@ -111,12 +128,17 @@
             return applications;
         };
 
+        factory.branchSelect = function () {
+            return branches;
+        };
+
         factory.localeSelect = function () {
             return locales;
         };
 
         factory.sentenceSelect = function (predicate) {
             onStart();
+            factory.exception = null;
             var sentences = [];
             try {
                 //Convert passed value to lower case when search is not case sensitive
@@ -133,6 +155,12 @@
                     }
                     for (var xBranchIndex = 0; xBranchIndex < xSentence.XBranch.length; xBranchIndex++) {
                         var xBranch = xSentence.XBranch[xBranchIndex];
+                        // Check if passed branch array is null or empty or contains branch for current XSentence
+                        if (predicate.branches != null &&
+                            predicate.branches.length > 0 &&
+                            predicate.branches.indexOf(xBranch._id) < 0) {
+                            continue;
+                        }
                         for (var xBranchTranslationIndex = 0; xBranchTranslationIndex < xBranch.XBranchTranslation.length; xBranchTranslationIndex++) {
                             var xBranchTranslation = xBranch.XBranchTranslation[xBranchTranslationIndex];
                             //Check if passed locale is the same as XBranchTranslation locale
