@@ -3,7 +3,8 @@
     var translationService = function ($http) {
 
         var factory = {
-            exception: null
+            exception: null,
+            context: 'context'
         };
 
         //Initialize empty data
@@ -103,7 +104,9 @@
                         branches.push({Name: xApplication._branch});
                     }
                     if (localeFind(xApplication._locale) == null) {
-                        locales.push({Name: xApplication._locale});
+                        if (xApplication._locale != factory.context) {
+                            locales.push({Name: xApplication._locale});
+                        }
                     }
                 });
                 // Convert XSentence, XBranch  and XBranchTranslation to array for single node (see prototype)
@@ -114,6 +117,9 @@
                         xBranch.XBranchTranslation = xBranch.XBranchTranslation.toArray();
                         angular.forEach(xBranch.XBranchTranslation, function (xBranchTranslation) {
                             xBranchTranslation._value = decodeURIComponent(escape(xBranchTranslation._value));
+                            if (xBranchTranslation._locale == factory.context) {
+                                xBranch.context = xBranchTranslation._value;
+                            }
                         });
                     });
                 });
@@ -191,6 +197,7 @@
                                     branch: xBranch._id,
                                     locale: xBranchTranslation._locale,
                                     value: xBranchTranslation._value,
+                                    context: xBranch.context,
                                     file: fileFind(xSentence._application, xBranch._id, xBranchTranslation._locale),
                                     selected: false
                                 });

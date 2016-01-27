@@ -48,7 +48,7 @@
 </head>
 <body>
 
-<table border="1">
+<table border="1" style="width: 100%">
     <tr>
         <td colspan="2">
             <table border="1">
@@ -123,7 +123,7 @@
         </td>
     </tr>
     <tr valign="top">
-        <td>
+        <td style="width: 50%">
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -131,6 +131,7 @@
                     <th><b>Application</b></th>
                     <th><b>Branch</b></th>
                     <th><b>Value</b></th>
+                    <th><b>Context</b></th>
                     <th><input type="checkbox" data-ng-model="sentenceInAll" data-ng-change="sentenceInAllSelect()"/>
                     </th>
                 </tr>
@@ -141,13 +142,14 @@
                     <td title="Application">{{sentence.application}}</td>
                     <td title="Branch">{{sentence.branch}}</td>
                     <td title="Value">{{sentence.value}}</td>
+                    <td title="Context">{{sentence.context}}</td>
                     <td title="Select"><input type="checkbox" data-ng-model="sentence.selected"
                                               data-ng-change="sentenceInSelect(sentence)"/></td>
                 </tr>
                 </tbody>
             </table>
         </td>
-        <td>
+        <td style="width: 50%">
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -155,6 +157,7 @@
                     <th><b>Application</b></th>
                     <th><b>Branch</b></th>
                     <th><b>Value</b></th>
+                    <th><b>Replace</b></th>
                     <th><input type="checkbox" data-ng-model="sentenceOutAll" data-ng-change="sentenceOutAllSelect()"/>
                     </th>
                 </tr>
@@ -165,6 +168,7 @@
                     <td title="Application">{{sentence.application}}</td>
                     <td title="Branch">{{sentence.branch}}</td>
                     <td title="Value">{{sentence.value}}</td>
+                    <td title="Replace">{{sentence.replace}}</td>
                     <td title="Select"><input type="checkbox" data-ng-model="sentence.selected"
                                               data-ng-change="sentenceOutSelect()"/></td>
                 </tr>

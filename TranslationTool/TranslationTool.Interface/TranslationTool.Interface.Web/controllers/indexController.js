@@ -58,7 +58,8 @@
                             key: sentence.key,
                             branch: sentence.branch,
                             locale: sentence.locale,
-                            value: $scope.replace,
+                            value: sentence.value,
+                            replace: $scope.replace,
                             file: sentence.file,
                             selected: true
                         });
@@ -182,7 +183,7 @@
                         ']\nreport_language=' + sentence.locale +
                         '\nfileSpec=' + sentence.file +
                         '\napplication=' + sentence.application +
-                        '\n' + sentence.locale + '=' + sentence.value +
+                        '\n' + sentence.locale + '=' + sentence.replace +
                         '\n\n';
                 }
             }
