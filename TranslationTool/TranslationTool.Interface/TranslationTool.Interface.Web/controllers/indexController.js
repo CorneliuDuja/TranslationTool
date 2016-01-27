@@ -22,6 +22,18 @@
             $scope.sentenceOutAll = true;
         }
 
+        function onStart() {
+            $('body').addClass('loading');
+        }
+
+        function onSuccess() {
+            $('body').removeClass('loading');
+        }
+
+        function onError() {
+            $('body').removeClass('loading');
+        }
+
         function errorProcess(message) {
             $scope.error = message;
             $timeout(function () {
@@ -98,6 +110,7 @@
         }
 
         $scope.upload = function () {
+            onStart();
             var fileReader = new FileReader();
             //Get upload control by id from DOM (index.html), get uploaded file as first array item and read it binary as string asynchronous
             fileReader.readAsBinaryString(document.getElementById('upload').files[0]);
@@ -118,6 +131,7 @@
                 }
                 //Redraw controls
                 $scope.$apply();
+                onSuccess();
             };
         };
 

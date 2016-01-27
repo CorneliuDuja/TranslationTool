@@ -48,135 +48,154 @@
 </head>
 <body>
 
-<table border="1" style="width: 100%">
-    <tr>
-        <td colspan="2">
-            <table border="1">
-                <tr align="center" valign="top">
-                    <td colspan="4">
-                        <input type="text" data-ng-model="error" readonly style="width: 100%; color: red;"/>
-                    </td>
-                </tr>
-                <tr align="center" valign="top">
-                    <td>
-                        <b>Step №1 - choose and upload input file</b>
-                    </td>
-                    <td>
-                        <b>Step №2 - select locale, applications and branches</b>
-                    </td>
-                    <td>
-                        <b>Step №3 - apply find and replace criteria</b>
-                    </td>
-                    <td>
-                        <b>Step №4 - download output file</b>
-                    </td>
-                </tr>
-                <tr valign="top">
-                    <td>
-                        <input type="file" id="upload"/>
-                        <button data-ng-click="upload()">Upload</button>
-                    </td>
-                    <td>
-                        <select data-ng-model="localeOut"
-                                data-ng-options="item as item.Name for item in localeIn"></select><span>Locale</span>
-                        <br/>
-                        <isteven-multi-select
-                                input-model="applicationIn"
-                                output-model="applicationOut"
-                                button-label="Name"
-                                item-label="Name"
-                                tick-property="ticked"
-                                max-labels="1">
-                        </isteven-multi-select>
-                        <span>Applications</span>
-                        <isteven-multi-select
-                                input-model="branchIn"
-                                output-model="branchOut"
-                                button-label="Name"
-                                item-label="Name"
-                                tick-property="ticked"
-                                max-labels="1">
-                        </isteven-multi-select>
-                        <span>Branches</span>
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Find:" data-ng-model="find"/>
-                        <input type="text" placeholder="Replace:" data-ng-model="replace"/>
-                        <button data-ng-click="search()">Search</button>
-                        <br/>
-                        <input type="checkbox" data-ng-model="caseSensitive"/><span>Case sensitive</span>
-                        <input type="checkbox" data-ng-model="wholeWords"/><span>Whole Words</span>
-                    </td>
-                    <td>
-                        <button data-ng-click="download()">Download</button>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr valign="top">
-        <td>
-            <input type="text" data-ng-model="sentenceInStatus" readonly style="width:100%; font-weight: bold;"/>
-        </td>
-        <td>
-            <input type="text" data-ng-model="sentenceOutStatus" readonly style="width:100%; font-weight: bold;"/>
-        </td>
-    </tr>
-    <tr valign="top">
-        <td style="width: 50%">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th><b>Key</b></th>
-                    <th><b>Application</b></th>
-                    <th><b>Branch</b></th>
-                    <th><b>Value</b></th>
-                    <th><b>Context</b></th>
-                    <th><input type="checkbox" data-ng-model="sentenceInAll" data-ng-change="sentenceInAllSelect()"/>
-                    </th>
-                </tr>
-                </thead>
-                <tbody data-ng-repeat="sentence in sentenceIn">
-                <tr>
-                    <td title="Key">{{sentence.key}}</td>
-                    <td title="Application">{{sentence.application}}</td>
-                    <td title="Branch">{{sentence.branch}}</td>
-                    <td title="Value">{{sentence.value}}</td>
-                    <td title="Context">{{sentence.context}}</td>
-                    <td title="Select"><input type="checkbox" data-ng-model="sentence.selected"
-                                              data-ng-change="sentenceInSelect(sentence)"/></td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-        <td style="width: 50%">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th><b>Key</b></th>
-                    <th><b>Application</b></th>
-                    <th><b>Branch</b></th>
-                    <th><b>Value</b></th>
-                    <th><b>Replace</b></th>
-                    <th><input type="checkbox" data-ng-model="sentenceOutAll" data-ng-change="sentenceOutAllSelect()"/>
-                    </th>
-                </tr>
-                </thead>
-                <tbody data-ng-repeat="sentence in sentenceOut">
-                <tr>
-                    <td title="Key">{{sentence.key}}</td>
-                    <td title="Application">{{sentence.application}}</td>
-                    <td title="Branch">{{sentence.branch}}</td>
-                    <td title="Value">{{sentence.value}}</td>
-                    <td title="Replace">{{sentence.replace}}</td>
-                    <td title="Select"><input type="checkbox" data-ng-model="sentence.selected"
-                                              data-ng-change="sentenceOutSelect()"/></td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-</table>
+<div>
+
+    <table border="1" style="width: 100%;">
+        <tr>
+            <td colspan="2">
+                <table border="1" style="width: 100%;">
+                    <tr align="center" valign="top">
+                        <td colspan="4">
+                            <input type="text" data-ng-model="error" readonly style="width: 100%; color: red; text-align: center;"/>
+                        </td>
+                    </tr>
+                    <tr align="center" valign="top">
+                        <td style="width: 15%;">
+                            <b>Step №1 - choose and upload input file</b>
+                        </td>
+                        <td style="width: 20%;">
+                            <b>Step №2 - select locale, applications and branches</b>
+                        </td>
+                        <td style="width: 50%;">
+                            <b>Step №3 - apply find and replace criteria</b>
+                        </td>
+                        <td style="width: 15%;">
+                            <b>Step №4 - download output file</b>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <input type="file" id="upload"/>
+                            <button data-ng-click="upload()">Upload</button>
+                        </td>
+                        <td>
+                            <select data-ng-model="localeOut"
+                                    data-ng-options="item as item.Name for item in localeIn"></select><span>Locale</span>
+                            <br/>
+                            <isteven-multi-select
+                                    input-model="applicationIn"
+                                    output-model="applicationOut"
+                                    button-label="Name"
+                                    item-label="Name"
+                                    tick-property="ticked"
+                                    max-labels="1">
+                            </isteven-multi-select>
+                            <span>Applications</span>
+                            <br/>
+                            <isteven-multi-select
+                                    input-model="branchIn"
+                                    output-model="branchOut"
+                                    button-label="Name"
+                                    item-label="Name"
+                                    tick-property="ticked"
+                                    max-labels="1">
+                            </isteven-multi-select>
+                            <span>Branches</span>
+                        </td>
+                        <td>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 50%;">
+                                        <textarea rows="3" placeholder="Find:" data-ng-model="find" style="width: 100%;"></textarea>
+                                    </td>
+                                    <td style="width: 50%;">
+                                        <textarea rows="3" placeholder="Replace:" data-ng-model="replace" style="width: 100%;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="checkbox" data-ng-model="caseSensitive"/><span>Case sensitive</span>
+                                        <input type="checkbox" data-ng-model="wholeWords"/><span>Whole Words</span>
+                                        <button data-ng-click="search()">Search</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td align="center">
+                            <button data-ng-click="download()">Download</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                <input type="text" data-ng-model="sentenceInStatus" readonly style="width:100%; font-weight: bold;"/>
+            </td>
+            <td>
+                <input type="text" data-ng-model="sentenceOutStatus" readonly style="width:100%; font-weight: bold;"/>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td style="width: 50%;">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th><b>Key</b></th>
+                        <th><b>Application</b></th>
+                        <th><b>Branch</b></th>
+                        <th><b>Value</b></th>
+                        <th><b>Context</b></th>
+                        <th><input type="checkbox" data-ng-model="sentenceInAll"
+                                   data-ng-change="sentenceInAllSelect()"/>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody data-ng-repeat="sentence in sentenceIn">
+                    <tr>
+                        <td title="Key">{{sentence.key}}</td>
+                        <td title="Application">{{sentence.application}}</td>
+                        <td title="Branch">{{sentence.branch}}</td>
+                        <td title="Value">{{sentence.value}}</td>
+                        <td title="Context">{{sentence.context}}</td>
+                        <td title="Select"><input type="checkbox" data-ng-model="sentence.selected"
+                                                  data-ng-change="sentenceInSelect(sentence)"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td style="width: 50%;">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th><b>Key</b></th>
+                        <th><b>Application</b></th>
+                        <th><b>Branch</b></th>
+                        <th><b>Value</b></th>
+                        <th><b>Replace</b></th>
+                        <th><input type="checkbox" data-ng-model="sentenceOutAll"
+                                   data-ng-change="sentenceOutAllSelect()"/>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody data-ng-repeat="sentence in sentenceOut">
+                    <tr>
+                        <td title="Key">{{sentence.key}}</td>
+                        <td title="Application">{{sentence.application}}</td>
+                        <td title="Branch">{{sentence.branch}}</td>
+                        <td title="Value">{{sentence.value}}</td>
+                        <td title="Replace">{{sentence.replace}}</td>
+                        <td title="Select"><input type="checkbox" data-ng-model="sentence.selected"
+                                                  data-ng-change="sentenceOutSelect()"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</div>
+<div class="modal"></div>
 
 </body>
 </html>

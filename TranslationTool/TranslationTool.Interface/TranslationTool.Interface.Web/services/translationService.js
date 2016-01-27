@@ -16,18 +16,6 @@
         var branches = [];
         var locales = [];
 
-        function onStart() {
-            $('body').addClass('loading');
-        }
-
-        function onSuccess() {
-            $('body').removeClass('loading');
-        }
-
-        function onError() {
-            $('body').removeClass('loading');
-        }
-
         function clearData() {
             dictionary = {
                 XApplication: [],
@@ -86,7 +74,6 @@
         }
 
         factory.load = function (data) {
-            onStart();
             factory.exception = null;
             try {
                 clearData();
@@ -123,13 +110,11 @@
                         });
                     });
                 });
-                onSuccess();
             }
             catch (exception) {
                 factory.exception = exception;
                 //Reset data to empty values in case of error
                 clearData();
-                onError();
             }
         };
 
@@ -146,7 +131,6 @@
         };
 
         factory.sentenceSelect = function (predicate) {
-            onStart();
             factory.exception = null;
             var sentences = [];
             try {
@@ -205,11 +189,9 @@
                         }
                     }
                 }
-                onSuccess();
             }
             catch (exception) {
                 factory.exception = exception;
-                onError();
             }
             return sentences;
         };
