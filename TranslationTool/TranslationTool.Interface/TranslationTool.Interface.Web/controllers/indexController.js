@@ -67,9 +67,21 @@
         };
 
         $scope.download = function () {
-            var typedArray = 'asdfasdfasdfasdgfasdg';
-            var blob = new Blob([typedArray], {type: 'application/octet-binary'});
-            var url = URL.createObjectURL(blob);
+            var output = '';
+            for (var index = 0; index < $scope.sentenceOut.length; index++) {
+                var sentence = $scope.sentenceOut[index];
+                if (sentence.selected) {
+                    output += '[' + sentence.key +
+                        ']\nreport_language=' + sentence.locale +
+                        '\nfileSpec=' + sentence.file +
+                        '\napplication=' + sentence.application +
+                        '\n' + sentence.locale + '=' + sentence.value +
+                        '\n\n';
+                }
+            }
+            if (output.length > 0) {
+                window.open('data:text/csv;charset=utf-8,' + encodeURIComponent(output));
+            }
         };
 
         function sentenceInProcess(sentence, replaceable) {
