@@ -21,6 +21,18 @@
             }
         });
 
+        $rootScope.onStart = function () {
+            $('body').addClass('loading');
+        };
+
+        $rootScope.onSuccess = function () {
+            $('body').removeClass('loading');
+        };
+
+        $rootScope.onError = function () {
+            $('body').removeClass('loading');
+        };
+
     }]);
 
 }());

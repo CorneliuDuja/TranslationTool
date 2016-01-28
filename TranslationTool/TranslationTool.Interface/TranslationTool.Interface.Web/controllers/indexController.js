@@ -1,9 +1,11 @@
 (function () {
 
-    var indexController = function ($scope, $filter, $routeParams, $timeout, translationService) {
+    var indexController = function ($scope, $filter, $routeParams, $q, $timeout, translationService) {
 
         function init() {
             $scope.error = '';
+            $scope.errorDelay = 5000;
+            $scope.defferDelay = 100;
             $scope.localeIn = [];
             $scope.localeOut = '';
             $scope.applicationIn = [];
@@ -22,23 +24,15 @@
             $scope.sentenceOutAll = true;
         }
 
-        function onStart() {
-            $('body').addClass('loading');
-        }
-
-        function onSuccess() {
-            $('body').removeClass('loading');
-        }
-
-        function onError() {
-            $('body').removeClass('loading');
-        }
-
         function errorProcess(message) {
+            if (message == null ||
+                message.length == 0) {
+                return;
+            }
             $scope.error = message;
             $timeout(function () {
                 $scope.error = '';
-            }, 3000);
+            }, $scope.errorDelay);
         }
 
         function sentenceInStatusProcess() {
@@ -60,6 +54,7 @@
         }
 
         function sentenceInProcess(sentence, replaceable) {
+            var message = '';
             var indexOf = 0;
             if (sentence.selected) {
                 if (replaceable) {
@@ -79,7 +74,7 @@
                 }
                 else {
                     sentence.selected = false;
-                    errorProcess('Cannot select - no replace value defined.');
+                    message = 'Cannot select - no replace value defined.';
                 }
             }
             else {
@@ -88,7 +83,7 @@
                     $scope.sentenceOut.splice(indexOf, 1);
                 }
             }
-            sentenceOutStatusProcess();
+            return message;
         }
 
         function sentenceIndexOf(sentences, sentence) {
@@ -109,35 +104,81 @@
             return ($scope.replace != null && $scope.replace.length > 0);
         }
 
+        function selectSentenceInAll(replaceable) {
+            var deferred = $q.defer();
+            $timeout(function () {
+                for (var index = 0; index < $scope.sentenceIn.length; index++) {
+                    var sentence = $scope.sentenceIn[index];
+                    if (sentence.selected != $scope.sentenceInAll) {
+                        sentence.selected = $scope.sentenceInAll;
+                        sentenceInProcess(sentence, replaceable);
+                    }
+                }
+                deferred.resolve();
+            }, $scope.defferDelay);
+            return deferred.promise;
+        }
+
+        function selectSentenceOutAll() {
+            var deferred = $q.defer();
+            $timeout(function () {
+                for (var index = 0; index < $scope.sentenceOut.length; index++) {
+                    $scope.sentenceOut[index].selected = $scope.sentenceOutAll;
+                }
+                deferred.resolve();
+            }, $scope.defferDelay);
+            return deferred.promise;
+        }
+
+        function outputProcess() {
+            var deferred = $q.defer();
+            $timeout(function () {
+                var output = '';
+                for (var index = 0; index < $scope.sentenceOut.length; index++) {
+                    var sentence = $scope.sentenceOut[index];
+                    if (sentence.selected) {
+                        output += '[' + sentence.key +
+                            ']\nreport_language=' + sentence.locale +
+                            '\nfileSpec=' + sentence.file +
+                            '\napplication=' + sentence.application +
+                            '\n' + sentence.locale + '=' + sentence.replace +
+                            '\n\n';
+                    }
+                }
+                deferred.resolve(output);
+            }, $scope.defferDelay);
+            return deferred.promise;
+        }
+
         $scope.upload = function () {
-            onStart();
+            $scope.onStart();
             var fileReader = new FileReader();
             //Get upload control by id from DOM (index.html), get uploaded file as first array item and read it binary as string asynchronous
             fileReader.readAsBinaryString(document.getElementById('upload').files[0]);
             //Subscribe on load end event
             fileReader.onloadend = function (e) {
                 //Get XML file as string and remove XML header
-                translationService.load(e.target.result.replace('<?xml version="1.0" encoding="UTF-8"?>', ''));
-                if (translationService.exception == null) {
-                    //Get control data
-                    $scope.localeIn = $filter('orderBy')(translationService.localeSelect(), 'Name', false);
-                    $scope.localeOut = ($scope.localeIn.length > 0) ? $scope.localeIn[0] : null;
-                    $scope.applicationIn = $filter('orderBy')(translationService.applicationSelect(), 'Name', false);
-                    $scope.branchIn = $filter('orderBy')(translationService.branchSelect(), 'Name', false);
-                    sentenceInStatusProcess();
-                }
-                else {
-                    errorProcess(translationService.exception.message);
-                }
-                //Redraw controls
-                $scope.$apply();
-                onSuccess();
+                translationService.load(e.target.result.replace('<?xml version="1.0" encoding="UTF-8"?>', '')).then(function () {
+                    $scope.onSuccess();
+                    if (translationService.exception == null) {
+                        //Get control data
+                        $scope.localeIn = $filter('orderBy')(translationService.localeSelect(), 'Name', false);
+                        $scope.localeOut = ($scope.localeIn.length > 0) ? $scope.localeIn[0] : null;
+                        $scope.applicationIn = $filter('orderBy')(translationService.applicationSelect(), 'Name', false);
+                        $scope.branchIn = $filter('orderBy')(translationService.branchSelect(), 'Name', false);
+                        sentenceInStatusProcess();
+                    }
+                    else {
+                        errorProcess(translationService.exception.message);
+                    }
+                });
             };
         };
 
         $scope.search = function () {
+            $scope.onStart();
             $scope.sentenceInAll = false;
-            $scope.sentenceIn = translationService.sentenceSelect({
+            translationService.sentenceSelect({
                 applications: $scope.applicationOut.map(function (item) {
                     return item.Name;
                 }),
@@ -148,13 +189,16 @@
                 value: $scope.find,
                 caseSensitive: $scope.caseSensitive,
                 wholeWords: $scope.wholeWords
-            });
-            if (translationService.exception == null) {
-                sentenceInStatusProcess();
-            }
-            else {
-                errorProcess(translationService.exception.message);
-            }
+            }).then(function (response) {
+                    $scope.sentenceIn = response;
+                    $scope.onSuccess();
+                    if (translationService.exception == null) {
+                        sentenceInStatusProcess();
+                    }
+                    else {
+                        errorProcess(translationService.exception.message);
+                    }
+                });
         };
 
         $scope.sentenceInAllSelect = function () {
@@ -164,24 +208,24 @@
                 errorProcess('Cannot select all items - no replace value defined.');
                 return;
             }
-            for (var index = 0; index < $scope.sentenceIn.length; index++) {
-                var sentence = $scope.sentenceIn[index];
-                if (sentence.selected != $scope.sentenceInAll) {
-                    sentence.selected = $scope.sentenceInAll;
-                    sentenceInProcess(sentence, replaceable);
-                }
-            }
+            $scope.onStart();
+            selectSentenceInAll(replaceable).then(function () {
+                $scope.onSuccess();
+                sentenceOutStatusProcess();
+            });
         };
 
         $scope.sentenceInSelect = function (sentence) {
-            sentenceInProcess(sentence, isReplaceable());
+            errorProcess(sentenceInProcess(sentence, isReplaceable()));
+            sentenceOutStatusProcess();
         };
 
         $scope.sentenceOutAllSelect = function () {
-            for (var index = 0; index < $scope.sentenceOut.length; index++) {
-                $scope.sentenceOut[index].selected = $scope.sentenceOutAll;
-            }
-            sentenceOutStatusProcess();
+            $scope.onStart();
+            selectSentenceOutAll().then(function () {
+                $scope.onSuccess();
+                sentenceOutStatusProcess();
+            });
         };
 
         $scope.sentenceOutSelect = function () {
@@ -189,31 +233,23 @@
         };
 
         $scope.download = function () {
-            var output = '';
-            for (var index = 0; index < $scope.sentenceOut.length; index++) {
-                var sentence = $scope.sentenceOut[index];
-                if (sentence.selected) {
-                    output += '[' + sentence.key +
-                        ']\nreport_language=' + sentence.locale +
-                        '\nfileSpec=' + sentence.file +
-                        '\napplication=' + sentence.application +
-                        '\n' + sentence.locale + '=' + sentence.replace +
-                        '\n\n';
+            $scope.onStart();
+            outputProcess().then(function (response) {
+                $scope.onSuccess();
+                if (response.length > 0) {
+                    window.open('data:text/csv;charset=utf-8,' + encodeURIComponent(response));
                 }
-            }
-            if (output.length > 0) {
-                window.open('data:text/csv;charset=utf-8,' + encodeURIComponent(output));
-            }
-            else {
-                errorProcess('Cannot download - no selected items.');
-            }
+                else {
+                    errorProcess('Cannot download - no selected items.');
+                }
+            });
         };
 
         init();
 
     };
 
-    indexController.$inject = ['$scope', '$filter', '$routeParams', '$timeout', 'translationService'];
+    indexController.$inject = ['$scope', '$filter', '$routeParams', '$q', '$timeout', 'translationService'];
 
     angular.module('translation').controller('indexController', indexController);
 
