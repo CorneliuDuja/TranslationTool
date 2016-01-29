@@ -25,14 +25,18 @@
         }
 
         function errorProcess(message) {
+            var processed = true;
             if (message == null ||
                 message.length == 0) {
-                return;
+                processed = false;
             }
-            $scope.error = message;
-            $timeout(function () {
-                $scope.error = '';
-            }, $scope.errorDelay);
+            else {
+                $scope.error = message;
+                $timeout(function () {
+                    $scope.error = '';
+                }, $scope.errorDelay);
+            }
+            return processed;
         }
 
         function sentenceInStatusProcess() {
@@ -216,8 +220,9 @@
         };
 
         $scope.sentenceInSelect = function (sentence) {
-            errorProcess(sentenceInProcess(sentence, isReplaceable()));
-            sentenceOutStatusProcess();
+            if (!errorProcess(sentenceInProcess(sentence, isReplaceable()))) {
+                sentenceOutStatusProcess();
+            }
         };
 
         $scope.sentenceOutAllSelect = function () {

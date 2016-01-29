@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><Dictionary>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="bg" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/bulgaria/src/main/resources/language/accounting_bg.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="bg" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/bulgaria/src/main/resources/language/accounting_bg.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="bg" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/bulgaria/src/main/resources/language/accounting_bg.properties"/>
+    <XApplication application="accounting" branch="main" locale="bg" fileSpec="//depot/product/co/stdco/main/server/countrymodules/bulgaria/src/main/resources/language/accounting_bg.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="ca" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/spain/src/main/resources/config/appl/srv/accounting/language/accounting_ca_ES.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="ca" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/spain/src/main/resources/language/accounting_ca.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="ca" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/spain/src/main/resources/language/accounting_ca.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="ca" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/spain/src/main/resources/language/accounting_ca.properties"/>
+    <XApplication application="accounting" branch="main" locale="ca" fileSpec="//depot/product/co/stdco/main/server/countrymodules/spain/src/main/resources/language/accounting_ca.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="da" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/denmark/src/main/resources/config/appl/srv/accounting/language/accounting_da_DK.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="da" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/denmark/src/main/resources/language/accounting_da.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="da" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/denmark/src/main/resources/language/accounting_da.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="da" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/denmark/src/main/resources/language/accounting_da.properties"/>
+    <XApplication application="accounting" branch="main" locale="da" fileSpec="//depot/product/co/stdco/main/server/countrymodules/denmark/src/main/resources/language/accounting_da.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="de" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/germany/src/main/resources/config/appl/srv/accounting/language/accounting_de_DE.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="de" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/germany/src/main/resources/language/accounting_de.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="de" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/germany/src/main/resources/language/accounting_de.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="de" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/germany/src/main/resources/language/accounting_de.properties"/>
+    <XApplication application="accounting" branch="main" locale="de" fileSpec="//depot/product/co/stdco/main/server/countrymodules/germany/src/main/resources/language/accounting_de.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="el" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/greece/src/main/resources/language/accounting_el.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="el" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/greece/src/main/resources/language/accounting_el.properties"/>
+    <XApplication application="accounting" branch="main" locale="el" fileSpec="//depot/product/co/stdco/main/server/countrymodules/greece/src/main/resources/language/accounting_el.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="en" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/salesmaster/accountingserver/src/main/resources/config/appl/srv/accounting/language/accounting_en_US.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="en" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/usa/src/main/resources/language/accounting.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="en" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/usa/src/main/resources/language/accounting.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="en" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/usa/src/main/resources/language/accounting.properties"/>
+    <XApplication application="accounting" branch="main" locale="en" fileSpec="//depot/product/co/stdco/main/server/countrymodules/usa/src/main/resources/language/accounting.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="en_GB" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/unitedkingdom/src/main/resources/config/appl/srv/accounting/language/accounting_en_GB.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="en_IE" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/ireland/src/main/resources/config/appl/srv/accounting/language/accounting_en_IE.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="es" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/spain/src/main/resources/config/appl/srv/accounting/language/accounting_es_ES.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="es" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/spain/src/main/resources/language/accounting_es.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="es" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/spain/src/main/resources/language/accounting_es.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="es" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/spain/src/main/resources/language/accounting_es.properties"/>
+    <XApplication application="accounting" branch="main" locale="es" fileSpec="//depot/product/co/stdco/main/server/countrymodules/spain/src/main/resources/language/accounting_es.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="et" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/estonia/src/main/resources/language/accounting_et.properties"/>
+    <XApplication application="accounting" branch="main" locale="et" fileSpec="//depot/product/co/stdco/main/server/countrymodules/estonia/src/main/resources/language/accounting_et.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="fi" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/finland/src/main/resources/config/appl/srv/accounting/language/accounting_fi_FI.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="fi" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/finland/src/main/resources/language/accounting_fi.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="fi" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/finland/src/main/resources/language/accounting_fi.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="fi" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/finland/src/main/resources/language/accounting_fi.properties"/>
+    <XApplication application="accounting" branch="main" locale="fi" fileSpec="//depot/product/co/stdco/main/server/countrymodules/finland/src/main/resources/language/accounting_fi.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="fr" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/france/src/main/resources/config/appl/srv/accounting/language/accounting_fr_FR.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="fr" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/france/src/main/resources/language/accounting_fr.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="fr" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/france/src/main/resources/language/accounting_fr.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="fr" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/france/src/main/resources/language/accounting_fr.properties"/>
+    <XApplication application="accounting" branch="main" locale="fr" fileSpec="//depot/product/co/stdco/main/server/countrymodules/france/src/main/resources/language/accounting_fr.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="hu" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/hungary/src/main/resources/language/accounting_hu.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="hu" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/hungary/src/main/resources/language/accounting_hu.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="hu" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/hungary/src/main/resources/language/accounting_hu.properties"/>
+    <XApplication application="accounting" branch="main" locale="hu" fileSpec="//depot/product/co/stdco/main/server/countrymodules/hungary/src/main/resources/language/accounting_hu.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="it" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/italy/src/main/resources/language/accounting_it.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="it" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/italy/src/main/resources/language/accounting_it.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="it" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/italy/src/main/resources/language/accounting_it.properties"/>
+    <XApplication application="accounting" branch="main" locale="it" fileSpec="//depot/product/co/stdco/main/server/countrymodules/italy/src/main/resources/language/accounting_it.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="nl" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/netherlands/src/main/resources/language/accounting_nl.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="nl" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/netherlands/src/main/resources/language/accounting_nl.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="nl" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/netherlands/src/main/resources/language/accounting_nl.properties"/>
+    <XApplication application="accounting" branch="main" locale="nl" fileSpec="//depot/product/co/stdco/main/server/countrymodules/netherlands/src/main/resources/language/accounting_nl.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="no" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/norway/src/main/resources/config/appl/srv/accounting/language/accounting_no_NO.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="no" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/norway/src/main/resources/language/accounting_no.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="no" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/norway/src/main/resources/language/accounting_no.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="no" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/norway/src/main/resources/language/accounting_no.properties"/>
+    <XApplication application="accounting" branch="main" locale="no" fileSpec="//depot/product/co/stdco/main/server/countrymodules/norway/src/main/resources/language/accounting_no.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="pl" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/poland/src/main/resources/config/appl/srv/accounting/language/accounting_pl_PL.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="pl" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/poland/src/main/resources/language/accounting_pl.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="pl" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/poland/src/main/resources/language/accounting_pl.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="pl" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/poland/src/main/resources/language/accounting_pl.properties"/>
+    <XApplication application="accounting" branch="main" locale="pl" fileSpec="//depot/product/co/stdco/main/server/countrymodules/poland/src/main/resources/language/accounting_pl.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="pt" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/countrymodules/portugal/src/main/resources/config/appl/srv/accounting/language/accounting_pt_PT.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="pt" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/portugal/src/main/resources/language/accounting_pt.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="pt" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/portugal/src/main/resources/language/accounting_pt.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="pt" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/portugal/src/main/resources/language/accounting_pt.properties"/>
+    <XApplication application="accounting" branch="main" locale="pt" fileSpec="//depot/product/co/stdco/main/server/countrymodules/portugal/src/main/resources/language/accounting_pt.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="sl" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/slovenia/src/main/resources/language/accounting_sl.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="sl" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/slovenia/src/main/resources/language/accounting_sl.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="sl" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/slovenia/src/main/resources/language/accounting_sl.properties"/>
+    <XApplication application="accounting" branch="main" locale="sl" fileSpec="//depot/product/co/stdco/main/server/countrymodules/slovenia/src/main/resources/language/accounting_sl.properties"/>
+    <XApplication application="accounting" branch="13.2-MAINT" locale="sv" fileSpec="//depot/product/co/stdco/13.2-MAINT/server/salesmaster/accountingserver/src/main/resources/config/appl/srv/accounting/language/accounting_sv_SE.properties"/>
+    <XApplication application="accounting" branch="14.1-MAINT" locale="sv" fileSpec="//depot/product/co/stdco/14.1-MAINT/server/countrymodules/sweden/src/main/resources/language/accounting_sv.properties"/>
+    <XApplication application="accounting" branch="14.2-MAINT" locale="sv" fileSpec="//depot/product/co/stdco/14.2-MAINT/server/countrymodules/sweden/src/main/resources/language/accounting_sv.properties"/>
+    <XApplication application="accounting" branch="15.1-MAINT" locale="sv" fileSpec="//depot/product/co/stdco/15.1-MAINT/server/countrymodules/sweden/src/main/resources/language/accounting_sv.properties"/>
+    <XApplication application="accounting" branch="main" locale="sv" fileSpec="//depot/product/co/stdco/main/server/countrymodules/sweden/src/main/resources/language/accounting_sv.properties"/>
+    <XSentence application="accounting" key="Reaccount.account">
+        <XBranch id="14.1-MAINT">
+            <XBranchTranslation locale="bg" value="Сметка"/>
+            <XBranchTranslation locale="ca" value="Compte"/>
+            <XBranchTranslation locale="da" value="Konto"/>
+            <XBranchTranslation locale="de" value="Konto"/>
+            <XBranchTranslation locale="en" value="Account"/>
+            <XBranchTranslation locale="es" value="Cuenta"/>
+            <XBranchTranslation locale="fi" value="Tili"/>
+            <XBranchTranslation locale="fr" value="Compte"/>
+            <XBranchTranslation locale="hu" value="Fiók"/>
+            <XBranchTranslation locale="it" value="Conto"/>
+            <XBranchTranslation locale="nl" value="Account"/>
+            <XBranchTranslation locale="no" value="Konto"/>
+            <XBranchTranslation locale="pl" value="Konto"/>
+            <XBranchTranslation locale="pt" value="Conta"/>
+            <XBranchTranslation locale="sl" value="Konto"/>
+            <XBranchTranslation locale="sv" value="Konto"/>
+        </XBranch>
+        <XBranch id="14.2-MAINT">
+            <XBranchTranslation locale="bg" value="Сметка"/>
+            <XBranchTranslation locale="ca" value="Compte"/>
+            <XBranchTranslation locale="da" value="Konto"/>
+            <XBranchTranslation locale="de" value="Konto"/>
+            <XBranchTranslation locale="el" value="Λογαριασμός"/>
+            <XBranchTranslation locale="en" value="Account"/>
+            <XBranchTranslation locale="es" value="Cuenta"/>
+            <XBranchTranslation locale="fi" value="Tili"/>
+            <XBranchTranslation locale="fr" value="Compte"/>
+            <XBranchTranslation locale="hu" value="Fiók"/>
+            <XBranchTranslation locale="it" value="Conto"/>
+            <XBranchTranslation locale="nl" value="Account"/>
+            <XBranchTranslation locale="no" value="Konto"/>
+            <XBranchTranslation locale="pl" value="Konto"/>
+            <XBranchTranslation locale="pt" value="Conta"/>
+            <XBranchTranslation locale="sl" value="Konto"/>
+            <XBranchTranslation locale="sv" value="Konto"/>
+        </XBranch>
+        <XBranch id="15.1-MAINT">
+            <XBranchTranslation locale="bg" value="Сметка"/>
+            <XBranchTranslation locale="ca" value="Compte"/>
+            <XBranchTranslation locale="da" value="Konto"/>
+            <XBranchTranslation locale="de" value="Konto"/>
+            <XBranchTranslation locale="el" value="Λογαριασμός"/>
+            <XBranchTranslation locale="en" value="Account"/>
+            <XBranchTranslation locale="es" value="Cuenta"/>
+            <XBranchTranslation locale="fi" value="Tili"/>
+            <XBranchTranslation locale="fr" value="Compte"/>
+            <XBranchTranslation locale="hu" value="Fiók"/>
+            <XBranchTranslation locale="it" value="Conto"/>
+            <XBranchTranslation locale="nl" value="Account"/>
+            <XBranchTranslation locale="no" value="Konto"/>
+            <XBranchTranslation locale="pl" value="Konto"/>
+            <XBranchTranslation locale="pt" value="Conta"/>
+            <XBranchTranslation locale="sl" value="Konto"/>
+            <XBranchTranslation locale="sv" value="Konto"/>
+        </XBranch>
+        <XBranch id="main">
+            <XBranchTranslation locale="bg" value="Сметка"/>
+            <XBranchTranslation locale="ca" value="Compte"/>
+            <XBranchTranslation locale="da" value="Konto"/>
+            <XBranchTranslation locale="de" value="Konto"/>
+            <XBranchTranslation locale="el" value="Λογαριασμός"/>
+            <XBranchTranslation locale="en" value="Account"/>
+            <XBranchTranslation locale="es" value="Cuenta"/>
+            <XBranchTranslation locale="fi" value="Tili"/>
+            <XBranchTranslation locale="fr" value="Compte"/>
+            <XBranchTranslation locale="hu" value="Fiók"/>
+            <XBranchTranslation locale="it" value="Conto"/>
+            <XBranchTranslation locale="nl" value="Account"/>
+            <XBranchTranslation locale="no" value="Konto"/>
+            <XBranchTranslation locale="pl" value="Konto"/>
+            <XBranchTranslation locale="pt" value="Conta"/>
+            <XBranchTranslation locale="sl" value="Konto"/>
+            <XBranchTranslation locale="sv" value="Konto"/>
+        </XBranch>
+        <XTranslation locale="de" value="Konto"/>
+        <XTranslation locale="no" value="Konto"/>
+        <XTranslation locale="sv" value="Konto"/>
+        <XTranslation locale="fi" value="Tili"/>
+        <XTranslation locale="pt" value="Conta"/>
+        <XTranslation locale="bg" value="Сметка"/>
+        <XTranslation locale="el" value="Λογαριασμός"/>
+        <XTranslation locale="en" value="Account"/>
+        <XTranslation locale="it" value="Conto"/>
+        <XTranslation locale="fr" value="Compte"/>
+        <XTranslation locale="hu" value="Fiók"/>
+        <XTranslation locale="es" value="Cuenta"/>
+        <XTranslation locale="sl" value="Konto"/>
+        <XTranslation locale="pl" value="Konto"/>
+        <XTranslation locale="da" value="Konto"/>
+        <XTranslation locale="ca" value="Compte"/>
+        <XTranslation locale="nl" value="Account"/>
+    </XSentence>
+    <XSentence application="accounting" key="Reaccount.accountable">
+        <XBranch id="14.1-MAINT">
+            <XBranchTranslation locale="bg" value="Отговорник"/>
+            <XBranchTranslation locale="ca" value="Responsable"/>
+            <XBranchTranslation locale="da" value="Ansvarlig"/>
+            <XBranchTranslation locale="de" value="Verantwortlich"/>
+            <XBranchTranslation locale="en" value="Accountable"/>
+            <XBranchTranslation locale="es" value="Responsable"/>
+            <XBranchTranslation locale="fi" value="Vastaava"/>
+            <XBranchTranslation locale="fr" value="Responsable"/>
+            <XBranchTranslation locale="hu" value="Elszámolható"/>
+            <XBranchTranslation locale="it" value="Responsabile"/>
+            <XBranchTranslation locale="nl" value="Verantwoordelijk"/>
+            <XBranchTranslation locale="no" value="Ansvarlig"/>
+            <XBranchTranslation locale="pl" value="Odpowiedzialny"/>
+            <XBranchTranslation locale="pt" value="Responsável"/>
+            <XBranchTranslation locale="sl" value="Odgovoren"/>
+            <XBranchTranslation locale="sv" value="Ansvarig"/>
+        </XBranch>
+        <XBranch id="14.2-MAINT">
+            <XBranchTranslation locale="bg" value="Отговорник"/>
+            <XBranchTranslation locale="ca" value="Responsable"/>
+            <XBranchTranslation locale="da" value="Ansvarlig"/>
+            <XBranchTranslation locale="de" value="Verantwortlich"/>
+            <XBranchTranslation locale="el" value="Με υποχρέωση λογοδοσίας"/>
+            <XBranchTranslation locale="en" value="Accountable"/>
+            <XBranchTranslation locale="es" value="Responsable"/>
+            <XBranchTranslation locale="fi" value="Vastaava"/>
+            <XBranchTranslation locale="fr" value="Responsable"/>
+            <XBranchTranslation locale="hu" value="Elszámolható"/>
+            <XBranchTranslation locale="it" value="Responsabile"/>
+            <XBranchTranslation locale="nl" value="Verantwoordelijk"/>
+            <XBranchTranslation locale="no" value="Ansvarlig"/>
+            <XBranchTranslation locale="pl" value="Odpowiedzialny"/>
+            <XBranchTranslation locale="pt" value="Responsável"/>
+            <XBranchTranslation locale="sl" value="Odgovoren"/>
+            <XBranchTranslation locale="sv" value="Ansvarig"/>
+        </XBranch>
+        <XBranch id="15.1-MAINT">
+            <XBranchTranslation locale="bg" value="Отговорник"/>
+            <XBranchTranslation locale="ca" value="Responsable"/>
+            <XBranchTranslation locale="da" value="Ansvarlig"/>
+            <XBranchTranslation locale="de" value="Verantwortlich"/>
+            <XBranchTranslation locale="el" value="Με υποχρέωση λογοδοσίας"/>
+            <XBranchTranslation locale="en" value="Accountable"/>
+            <XBranchTranslation locale="es" value="Responsable"/>
+            <XBranchTranslation locale="fi" value="Vastaava"/>
+            <XBranchTranslation locale="fr" value="Responsable"/>
+            <XBranchTranslation locale="hu" value="Elszámolható"/>
+            <XBranchTranslation locale="it" value="Responsabile"/>
+            <XBranchTranslation locale="nl" value="Verantwoordelijk"/>
+            <XBranchTranslation locale="no" value="Ansvarlig"/>
+            <XBranchTranslation locale="pl" value="Odpowiedzialny"/>
+            <XBranchTranslation locale="pt" value="Responsável"/>
+            <XBranchTranslation locale="sl" value="Odgovoren"/>
+            <XBranchTranslation locale="sv" value="Ansvarig"/>
+        </XBranch>
+        <XBranch id="main">
+            <XBranchTranslation locale="bg" value="Отговорник"/>
+            <XBranchTranslation locale="ca" value="Responsable"/>
+            <XBranchTranslation locale="da" value="Ansvarlig"/>
+            <XBranchTranslation locale="de" value="Verantwortlich"/>
+            <XBranchTranslation locale="el" value="Με υποχρέωση λογοδοσίας"/>
+            <XBranchTranslation locale="en" value="Accountable"/>
+            <XBranchTranslation locale="es" value="Responsable"/>
+            <XBranchTranslation locale="fi" value="Vastaava"/>
+            <XBranchTranslation locale="fr" value="Responsable"/>
+            <XBranchTranslation locale="hu" value="Elszámolható"/>
+            <XBranchTranslation locale="it" value="Responsabile"/>
+            <XBranchTranslation locale="nl" value="Verantwoordelijk"/>
+            <XBranchTranslation locale="no" value="Ansvarlig"/>
+            <XBranchTranslation locale="pl" value="Odpowiedzialny"/>
+            <XBranchTranslation locale="pt" value="Responsável"/>
+            <XBranchTranslation locale="sl" value="Odgovoren"/>
+            <XBranchTranslation locale="sv" value="Ansvarig"/>
+        </XBranch>
+        <XTranslation locale="de" value="Verantwortlich"/>
+        <XTranslation locale="no" value="Ansvarlig"/>
+        <XTranslation locale="sv" value="Ansvarig"/>
+        <XTranslation locale="fi" value="Vastaava"/>
+        <XTranslation locale="pt" value="Responsável"/>
+        <XTranslation locale="bg" value="Отговорник"/>
+        <XTranslation locale="el" value="Με υποχρέωση λογοδοσίας"/>
+        <XTranslation locale="en" value="Accountable"/>
+        <XTranslation locale="it" value="Responsabile"/>
+        <XTranslation locale="fr" value="Responsable"/>
+        <XTranslation locale="hu" value="Elszámolható"/>
+        <XTranslation locale="es" value="Responsable"/>
+        <XTranslation locale="sl" value="Odgovoren"/>
+        <XTranslation locale="pl" value="Odpowiedzialny"/>
+        <XTranslation locale="da" value="Ansvarlig"/>
+        <XTranslation locale="ca" value="Responsable"/>
+        <XTranslation locale="nl" value="Verantwoordelijk"/>
+    </XSentence>
+</Dictionary>
