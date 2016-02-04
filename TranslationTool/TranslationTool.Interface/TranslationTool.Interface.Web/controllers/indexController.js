@@ -70,7 +70,7 @@
                             branch: sentence.branch,
                             locale: sentence.locale,
                             value: sentence.value,
-                            replace: sentence.value.replace(new RegExp($scope.find, regExpModifiers), $scope.replace),
+                            replace: $scope.wholeWords ? $scope.replace : sentence.value.replace(new RegExp($scope.find, regExpModifiers), $scope.replace),
                             file: sentence.file,
                             selected: true
                         });
