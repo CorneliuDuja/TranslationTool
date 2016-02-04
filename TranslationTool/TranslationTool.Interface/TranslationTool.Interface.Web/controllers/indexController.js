@@ -57,7 +57,7 @@
                 ' Selected: ' + sentenceInSelected;
         }
 
-        function sentenceInProcess(sentence, replaceable) {
+        function sentenceInProcess(sentence, replaceable, regExpModifiers) {
             var message = '';
             var indexOf = 0;
             if (sentence.selected) {
@@ -70,7 +70,7 @@
                             branch: sentence.branch,
                             locale: sentence.locale,
                             value: sentence.value,
-                            replace: $scope.replace,
+                            replace: sentence.value.replace(new RegExp($scope.find, regExpModifiers), $scope.replace),
                             file: sentence.file,
                             selected: true
                         });
@@ -108,14 +108,19 @@
             return ($scope.replace != null && $scope.replace.length > 0);
         }
 
+        function getRegExpModifiers() {
+            return $scope.caseSensitive ? 'g' : 'ig';
+        }
+
         function selectSentenceInAll(replaceable) {
             var deferred = $q.defer();
             $timeout(function () {
+                var regExpModifiers = getRegExpModifiers();
                 for (var index = 0; index < $scope.sentenceIn.length; index++) {
                     var sentence = $scope.sentenceIn[index];
                     if (sentence.selected != $scope.sentenceInAll) {
                         sentence.selected = $scope.sentenceInAll;
-                        sentenceInProcess(sentence, replaceable);
+                        sentenceInProcess(sentence, replaceable, regExpModifiers);
                     }
                 }
                 deferred.resolve();
@@ -220,7 +225,7 @@
         };
 
         $scope.sentenceInSelect = function (sentence) {
-            if (!errorProcess(sentenceInProcess(sentence, isReplaceable()))) {
+            if (!errorProcess(sentenceInProcess(sentence, isReplaceable(), getRegExpModifiers()))) {
                 sentenceOutStatusProcess();
             }
         };

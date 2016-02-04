@@ -108,11 +108,11 @@
                             <table style="width: 100%;">
                                 <tr>
                                     <td style="width: 50%;">
-                                        <textarea rows="3" placeholder="Find:" data-ng-model="find"
+                                        <textarea rows="auto" placeholder="Find:" data-ng-model="find"
                                                   style="width: 100%;"></textarea>
                                     </td>
                                     <td style="width: 50%;">
-                                        <textarea rows="3" placeholder="Replace:" data-ng-model="replace"
+                                        <textarea rows="auto" placeholder="Replace:" data-ng-model="replace"
                                                   style="width: 100%;"></textarea>
                                     </td>
                                 </tr>
@@ -198,7 +198,7 @@
                             <td style="width: 10%;" class="td wrap" title="{{sentence.application}}">{{sentence.application}}</td>
                             <td style="width: 10%;" class="td wrap" title="{{sentence.branch}}">{{sentence.branch}}</td>
                             <td style="width: 30%;" class="td wrap" title="{{sentence.value}}">{{sentence.value}}</td>
-                            <td style="width: 30%;" class="td wrap" title="{{sentence.replace}}">{{sentence.replace}}</td>
+                            <td style="width: 30%;" class="td wrap" title="{{sentence.replace}}"><textarea rows="auto" data-ng-model="sentence.replace" style="width: 100%;"></textarea></td>
                             <td style="width:  5%;" class="td wrap" title="Select"><input type="checkbox"
                                                                                           data-ng-model="sentence.selected"
                                                                                           data-ng-change="sentenceOutSelect()"/>
