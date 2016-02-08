@@ -142,6 +142,9 @@
                 var sentences = [];
                 try {
                     //Convert passed value to lower case when search is not case sensitive
+                    if (predicate.value == null) {
+                        predicate.value = '';
+                    }
                     if (!predicate.caseSensitive) {
                         predicate.value = predicate.value.toLowerCase();
                     }
@@ -174,11 +177,16 @@
                                 }
                                 //Apply whole words search criteria
                                 var found = false;
-                                if (predicate.wholeWords) {
-                                    found = (branchTranslationValue == predicate.value);
+                                if (predicate.value.length == 0) {
+                                    found = true;
                                 }
                                 else {
-                                    found = (branchTranslationValue.indexOf(predicate.value) >= 0);
+                                    if (predicate.wholeWords) {
+                                        found = (branchTranslationValue == predicate.value);
+                                    }
+                                    else {
+                                        found = (branchTranslationValue.indexOf(predicate.value) >= 0);
+                                    }
                                 }
                                 // Add found item to search results
                                 if (found) {

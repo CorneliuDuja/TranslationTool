@@ -78,7 +78,7 @@
                 }
                 else {
                     sentence.selected = false;
-                    message = 'Cannot select - no replace value defined.';
+                    message = 'Cannot select - no find or replace value defined.';
                 }
             }
             else {
@@ -105,7 +105,11 @@
         }
 
         function isReplaceable() {
-            return ($scope.replace != null && $scope.replace.length > 0);
+            var replaceable = ($scope.replace != null && $scope.replace.length > 0);
+            if (!$scope.wholeWords) {
+                replaceable = replaceable && ($scope.find != null && $scope.find.length > 0);
+            }
+            return replaceable;
         }
 
         function getRegExpModifiers() {
@@ -163,7 +167,13 @@
             $scope.onStart();
             var fileReader = new FileReader();
             //Get upload control by id from DOM (index.html), get uploaded file as first array item and read it binary as string asynchronous
-            fileReader.readAsBinaryString(document.getElementById('upload').files[0]);
+            try {
+                fileReader.readAsBinaryString(document.getElementById('upload').files[0]);
+            }
+            catch (exception) {
+                $scope.onError();
+                errorProcess(exception.message);
+            }
             //Subscribe on load end event
             fileReader.onloadend = function (e) {
                 //Get XML file as string and remove XML header
@@ -214,7 +224,7 @@
             var replaceable = isReplaceable();
             if ($scope.sentenceInAll && !replaceable) {
                 $scope.sentenceInAll = false;
-                errorProcess('Cannot select all items - no replace value defined.');
+                errorProcess('Cannot select all items - no find or replace value defined.');
                 return;
             }
             $scope.onStart();
