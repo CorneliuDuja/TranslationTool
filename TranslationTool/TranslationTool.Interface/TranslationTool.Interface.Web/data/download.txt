@@ -1,0 +1,15 @@
+[fiscal.refundvalidator.input.enter.seal.header]
+report_language=en
+filespec=//depot/product/pos/stdpos/14.1-MAINT/subsystems/poscountry/portugal/java/src/se/extenda/countrymodule/portugal/language/portugalfiscal_en.properties
+filespec=//depot/product/pos/stdpos/14.2-MAINT/subsystems/poscountry/portugal/java/src/se/extenda/countrymodule/portugal/language/portugalfiscal_en.properties
+filespec=//depot/product/pos/stdpos/main/subsystems/poscountry/portugal/java/src/se/extenda/countrymodule/portugal/language/portugalfiscal_en.properties
+application=fiscal_pt
+en=mumu
+
+[fiscal.refundvalidator.input.enter.seal.message]
+report_language=en
+filespec=//depot/product/pos/stdpos/14.1-MAINT/subsystems/poscountry/portugal/java/src/se/extenda/countrymodule/portugal/language/portugalfiscal_en.properties
+filespec=//depot/product/pos/stdpos/14.2-MAINT/subsystems/poscountry/portugal/java/src/se/extenda/countrymodule/portugal/language/portugalfiscal_en.properties
+application=fiscal_pt
+en=kuku
+

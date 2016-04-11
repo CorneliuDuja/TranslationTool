@@ -147,17 +147,37 @@
             var deferred = $q.defer();
             $timeout(function () {
                 var output = '';
+                var sentences = {};
                 for (var index = 0; index < $scope.sentenceOut.length; index++) {
                     var sentence = $scope.sentenceOut[index];
                     if (sentence.selected) {
-                        output += '[' + sentence.key +
-                            ']\nreport_language=' + sentence.locale +
-                            '\nfileSpec=' + sentence.file +
-                            '\napplication=' + sentence.application +
-                            '\n' + sentence.locale + '=' + sentence.replace +
-                            '\n\n';
+                        //output += '[' + sentence.key +
+                        //    ']\nreport_language=' + sentence.locale +
+                        //   '\nfilespec=' + sentence.file +
+                        //    '\napplication=' + sentence.application +
+                        //    '\n' + sentence.locale + '=' + sentence.replace +
+                        //    '\n\n';
+                        var key = sentence.key + sentence.locale + sentence.application + sentence.replace;
+                        if (sentences[key] === undefined){
+                            sentences[key] = {
+                                key: sentence.key,
+                                locale: sentence.locale,
+                                application: sentence.application,
+                                value: sentence.replace,
+                                files: []
+                            };
+                        }
+                        sentences[key].files.push(sentence.file);
                     }
                 }
+                Object.keys(sentences).forEach(function (key) {
+                    var sentence = sentences[key];
+                    output += '[' + sentence.key + ']\nreport_language=' + sentence.locale;
+                    for (var index = 0; index < sentence.files.length; index++){
+                        output += '\nfilespec=' + sentence.files[index];
+                    }
+                    output += '\napplication=' + sentence.application + '\n' + sentence.locale + '=' + sentence.value + '\n\n';
+                });
                 deferred.resolve(output);
             }, $scope.defferDelay);
             return deferred.promise;
